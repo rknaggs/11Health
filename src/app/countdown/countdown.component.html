@@ -1,0 +1,47 @@
+<div class="container rounded mt-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="center mb-3 p-3 title">Tax Time Countdown</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex">
+            <label class="pl-3 pr-2 pt-2" for="Zipcode">Zipcode: </label>
+            <input [(ngModel)]="zipCodeEntry" placeholder="Enter Zipcode Here" maxLength="5" autocomplete="off"
+                class="mr-2" type="text" name="Zipcode" #zipCode />
+            <button class="btn btn-primary" [disabled]="zipCodeEntry.length < 5" (click)=getTimeZone()>Submit</button>
+        </div>
+        <div class="col d-flex">
+            <div class="pr-2 pt-2">Timezone:</div>
+            <div class="pt-2" name="TimeZone" *ngIf="timezoneIdentifier !== ''">{{timezoneIdentifier}} -
+                {{timezoneAbbr}}</div>
+        </div>
+    </div>
+    <div class="row p-5">
+        <div class="col counter-container center">
+            Days left to tax time: Day(s): {{time.days}} | Hours: {{time.hours}} | Minutes: {{time.minutes}} | Seconds:
+            {{time.seconds}}
+        </div>
+    </div>
+</div>
+<!-- Error Modal -->
+<div class="error-modal modal fade" id="errorModal"
+    [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}">
+    <div class="container">
+        <div class="modal-content">
+            <div class="modal-header error-title pt-2">
+                <h5 class="modal-title" id="errorLabel">Error</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openModal(false)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{errorMsg}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="openModal(false)">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

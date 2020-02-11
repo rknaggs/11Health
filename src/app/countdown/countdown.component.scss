@@ -1,0 +1,33 @@
+.container {
+  padding:0;
+}
+
+.title {
+  background-color: #fafafa;
+  padding:0;
+}
+
+.center {
+  text-align: center;
+}
+
+.rounded {
+  box-shadow: lightness($color: #000000);
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 11px -6px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 1px 2px 11px -6px rgba(0, 0, 0, 0.38);
+  box-shadow: 1px 2px 11px -6px rgba(0, 0, 0, 0.38);
+}
+
+.counter-container {
+  background-color: #fefefe;
+}
+
+.error-modal {
+  margin-top:80px;
+  border: 1px solid #f0f0f0;
+}
+
+.error-title {
+  background-color: #fafafa;
+}
